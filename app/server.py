@@ -1,13 +1,11 @@
 
 # Import des bibliothèques nécessaires
-import time
-import sys
-import cherrypy
 import os
+import cherrypy
 from cheroot.wsgi import Server as WSGIServer
-from pyspark import SparkContext, SparkConf
-from pyspark.sql import SparkSession
+from cheroot.wsgi import PathInfoDispatcher
 from app import create_app
+
 
 # Création de l'objet SparkConf
 conf = SparkConf().setAppName("movie_recommendation-server")

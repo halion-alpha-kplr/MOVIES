@@ -7,9 +7,14 @@ import pandas as pd
 import random
 import pyspark.sql.functions as F
 from pyspark import SparkContext, SparkConf
-from server import sc
 
+from pyspark import SparkContext, SparkConf
+from engine import RecommendationEngine
 
+conf = SparkConf().setAppName("movie_recommendation-server")
+sc = SparkContext(conf=conf)
+
+engine = RecommendationEngine(sc, "app/ml-latest/movies.csv", "app/ml-latest/movies.csv")
 
 class RecommendationEngine:
     def __init__(self, sc, movies_set_path, ratings_set_path):

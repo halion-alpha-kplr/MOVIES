@@ -5,7 +5,6 @@ from inflect import engine
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SparkSession
 from engine import RecommendationEngine
-from engine import engine
 
 
 # Création du Blueprint Flask
