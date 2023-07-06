@@ -6,6 +6,8 @@ from pyspark.sql import SQLContext
 import pandas as pd
 import random
 import pyspark.sql.functions as F
+from pyspark import SparkContext, SparkConf
+from server import sc
 
 
 
@@ -84,7 +86,7 @@ class RecommendationEngine:
 
 
 # Création d'une instance de la classe RecommendationEngine
-engine = RecommendationEngine(sc, "chemin_vers_ensemble_films", "chemin_vers_ensemble_evaluations")
+engine = RecommendationEngine(sc, "app/ml-latest/movies.csv", "app/ml-latest/movies.csv")
 
 # Exemple d'utilisation des méthodes de la classe RecommendationEngine
 user_id = engine.create_user(None)
